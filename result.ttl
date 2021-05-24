@@ -1,224 +1,346 @@
-@prefix : <http://www.semanticweb.org/juanmarcos/ontologies/2021/4/untitled-ontology-3#> .
+@prefix : <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#> .
+@prefix ns1: <https://schema.org/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/entrega3.ttl> .
+@base <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl> .
 
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/entrega3.ttl> rdf:type owl:Ontology .
+<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl> rdf:type owl:Ontology .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#nombre
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#nombre> rdf:type owl:AnnotationProperty ;
-                                                                      rdfs:subPropertyOf owl:backwardCompatibleWith .
+###  https://schema.org/Actor
+ns1:Actor rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/Author
+ns1:Author rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/Genre
+ns1:Genre rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/Web
+ns1:Web rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/calification
+ns1:calification rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/description
+ns1:description rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/director
+ns1:director rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/duration
+ns1:duration rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/name
+ns1:name rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/palabrasClaves
+ns1:palabrasClaves rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/porcentajeECartelera
+ns1:porcentajeECartelera rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/porcentajeIMDB
+ns1:porcentajeIMDB rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/porcentajeMetacritic
+ns1:porcentajeMetacritic rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/porcentajeTomatoes
+ns1:porcentajeTomatoes rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/producer
+ns1:producer rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/trailer
+ns1:trailer rdf:type owl:AnnotationProperty .
 
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#URLMovie
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#URLMovie> rdf:type owl:ObjectProperty ;
-                                                                        owl:inverseOf <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesURL> ;
-                                                                        rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Movie> .
+###  http://schema.org/actor
+<http://schema.org/actor> rdf:type owl:ObjectProperty ;
+                          rdfs:domain <http://schema.org/Movie> .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#commentMovie
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#commentMovie> rdf:type owl:ObjectProperty ;
-                                                                            owl:inverseOf <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#movieComment> ;
-                                                                            rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Movie> .
+###  http://schema.org/author
+<http://schema.org/author> rdf:type owl:ObjectProperty ;
+                           rdfs:domain <http://schema.org/Movie> .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#genreMovie
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#genreMovie> rdf:type owl:ObjectProperty ;
-                                                                          owl:inverseOf <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesGenre> ;
-                                                                          rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Movie> .
+###  http://schema.org/director
+<http://schema.org/director> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://schema.org/Movie> .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#movieComment
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#movieComment> rdf:type owl:ObjectProperty ;
-                                                                            rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Comment> .
+###  http://schema.org/producer
+<http://schema.org/producer> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://schema.org/Movie> .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesGenre
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesGenre> rdf:type owl:ObjectProperty ;
-                                                                           rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Genre> .
-
-
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesPerson
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesPerson> rdf:type owl:ObjectProperty ;
-                                                                            owl:inverseOf <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#personMovies> ;
-                                                                            rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Person> .
-
-
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesProvider
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesProvider> rdf:type owl:ObjectProperty ;
-                                                                              owl:inverseOf <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#providerMovies> ;
-                                                                              rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Provider> .
-
-
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesURL
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#moviesURL> rdf:type owl:ObjectProperty ;
-                                                                         rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#URL> .
-
-
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#personMovies
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#personMovies> rdf:type owl:ObjectProperty ;
-                                                                            rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Movie> .
-
-
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#providerMovies
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#providerMovies> rdf:type owl:ObjectProperty ;
-                                                                              rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Movie> .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#contentRating
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#contentRating> rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#description
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#description> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/comment
-<https://schema.org/comment> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/dateCreated
-<https://schema.org/dateCreated> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/duration
-<https://schema.org/duration> rdf:type owl:DatatypeProperty ;
-                              rdfs:subPropertyOf <https://schema.org/duration> .
-
-
-###  https://schema.org/keywords
-<https://schema.org/keywords> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/name
-<https://schema.org/name> rdf:type owl:DatatypeProperty ;
-                          rdfs:domain <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Person> .
-
-
-###  https://schema.org/trailer
-<https://schema.org/trailer> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/url
-<https://schema.org/url> rdf:type owl:DatatypeProperty .
+###  http://schema.org/trailer
+<http://schema.org/trailer> rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdfs:domain <http://schema.org/Movie> ;
+                            rdfs:range <http://schema.org/VideoObject> .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Author
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Author> rdf:type owl:Class ;
-                                                                      rdfs:subClassOf <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Person> .
+###  http://PorcentajeImbd
+<http://PorcentajeImbd> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Comment
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Comment> rdf:type owl:Class .
+###  http://PorcentajeMetacritic
+<http://PorcentajeMetacritic> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Director
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Director> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Person> .
+###  http://PorcentajeTomatotes
+<http://PorcentajeTomatotes> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Genre
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Genre> rdf:type owl:Class .
+###  http://schema.org/Duration
+<http://schema.org/Duration> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Movie
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Movie> rdf:type owl:Class .
+###  http://schema.org/Movie
+<http://schema.org/Movie> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Person
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Person> rdf:type owl:Class .
+###  http://schema.org/Url
+<http://schema.org/Url> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Provider
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Provider> rdf:type owl:Class .
+###  http://schema.org/VideoObject
+<http://schema.org/VideoObject> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#URL
-<https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#URL> rdf:type owl:Class .
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeMetacritic
+:porcentajeMetacritic rdf:type owl:Class .
 
 
-###  https://schema.org/https://schema.org/Actor
-<https://schema.org/https://schema.org/Actor> rdf:type owl:Class ;
-                                              rdfs:subClassOf <https://raw.githubusercontent.com/nicoruffolo/twstp3/master/#Person> .
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#schema:description
+:schema:description rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#schema:genre
+:schema:genre rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#palabrasClaves
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#palabrasClaves> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:calification
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:calification> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#calification
+:calification rdf:type owl:NamedIndividual ;
+              ns1:calification "PG-13"^^xsd:float .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#description
+:description rdf:type owl:NamedIndividual ,
+                      :schema:description ;
+             ns1:description """&#39;Wonder Woman 1984&#39; llegará a la pantalla grande el próximo 5 de junio de 2020, de nuevo con la actriz israelí Gal Gadot en el papel de la Mujer Maravilla y Patty Jenkins detrás de las cámaras. La secuela de &#39;Wonder Woman&#39; contará además con el regreso de Chris Pine (&#39;Star Trek. Más allá&#39;) como Steve Trevor. La película sigue a Diana en su vida durante los años 80 en Estados Unidos. En esta ocasión, Diana se enfrentará a nuevos enemigos. Su principal antagonista es la arqueóloga británica Barbara Minerva, que será interpretada por Kristen Wigg (&#39;Cazafantasmas&#39;). La científica tiene un alter ego, la villana Cheetah que tiene una fuerza y agilidad sobrehumanas. Otro enemigo a tener en cuenta será el empresario Maxwel Lord, interpretado por Pedro Pascal (&#39;The Mandalorian&#39;). Este personaje es un arrogante con la habilidad de manipular a otros a su antojo. En los cómics, Max Lord tiene poderes mentales. También aparecen en esta cinta las guerreras amazonas Antiope (Robin Wright) y la Reina Hippolyta (Connie Nielsen).
+
+
+
+La trama de esta película es una gran misterio. El guión está basado en una historia escrita por Patty Jenkins, Geoff Johns (&#39;The Flash&#39;, &#39;Aquaman&#39;) y Dave Callaham (&#39;Zombieland: Mata y remata&#39;). Se espera que tenga protagonismo la tecnología y la vigilancia, teniendo en cuenta el título que hace referencia a la distopía de &#39;1984&#39; de George Orwell.""" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#director
+:director rdf:type owl:NamedIndividual ;
+          ns1:director "Patty Jenkins" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#genre
+:genre rdf:type owl:NamedIndividual ,
+                :schema:genre ;
+       ns1:Genre "Action" ,
+                 "Adventure" ,
+                 "Fantasy" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#palabrasClaves
+:palabrasClaves rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeECartelera
+:porcentajeECartelera rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeMetacritic
+:porcentajeMetacritic rdf:type owl:NamedIndividual ,
+                               :porcentajeMetacritic .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#producer
+:producer rdf:type owl:NamedIndividual ;
+          ns1:producer "Warner Bros. Pictures" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#web
+:web rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#calification
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#calification> rdf:type owl:NamedIndividual ,
+                                                                                         <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:calification> ;
+                                                                                ns1:calification "PG-13"^^xsd:float .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#palabrasClaves
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#palabrasClaves> rdf:type owl:NamedIndividual ,
+                                                                                           owl:Class ,
+                                                                                           <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#palabrasClaves> .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> rdf:type owl:NamedIndividual ,
+                                                                                                 owl:Class ,
+                                                                                                 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> rdf:type owl:NamedIndividual ,
+                                                                                           owl:Class ,
+                                                                                           <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> rdf:type owl:NamedIndividual ,
+                                                                                               owl:Class ,
+                                                                                               <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web> rdf:type owl:NamedIndividual ,
+                                                                                owl:Class ,
+                                                                                <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Wonder_Woman ns1:name "Wonder Woman 1984" .
+
+
+:actor ns1:Actor "{'@type': 'Person', 'name': 'Thomas Clay Strickland', 'url': 'https://www.metacritic.com/person/thomas-clay-strickland'}" .
+
+
+:author ns1:Author "William Moulton Marston" ,
+                   "Patty Jenkins" ,
+                   "Geoff Johns" ,
+                   "Dave Callaham" .
+
+
+:duration ns1:duration "PT2H31M"^^xsd:int .
+
+
+:porcentajeMetacritic ns1:porcentajeMetacritic "60% (por sobre un total de 57 criticas)"^^xsd:float .
+
+
+:trailer ns1:trailer "Wonder Woman 1984 is a movie starring Gal Gadot, Chris Pine, and Kristen Wiig. Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient..." .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Wonder_Woman> ns1:name "Wonder Woman 1984" .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor> ns1:Actor "{'@type': 'Person', 'name': 'Thomas Clay Strickland', 'url': 'https://www.metacritic.com/person/thomas-clay-strickland'}" .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#author> ns1:Author "Patty Jenkins" ,
+                                                                                     "Dave Callaham" ,
+                                                                                     "Geoff Johns" ,
+                                                                                     "William Moulton Marston" .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#description> ns1:description """&#39;Wonder Woman 1984&#39; llegará a la pantalla grande el próximo 5 de junio de 2020, de nuevo con la actriz israelí Gal Gadot en el papel de la Mujer Maravilla y Patty Jenkins detrás de las cámaras. La secuela de &#39;Wonder Woman&#39; contará además con el regreso de Chris Pine (&#39;Star Trek. Más allá&#39;) como Steve Trevor. La película sigue a Diana en su vida durante los años 80 en Estados Unidos. En esta ocasión, Diana se enfrentará a nuevos enemigos. Su principal antagonista es la arqueóloga británica Barbara Minerva, que será interpretada por Kristen Wigg (&#39;Cazafantasmas&#39;). La científica tiene un alter ego, la villana Cheetah que tiene una fuerza y agilidad sobrehumanas. Otro enemigo a tener en cuenta será el empresario Maxwel Lord, interpretado por Pedro Pascal (&#39;The Mandalorian&#39;). Este personaje es un arrogante con la habilidad de manipular a otros a su antojo. En los cómics, Max Lord tiene poderes mentales. También aparecen en esta cinta las guerreras amazonas Antiope (Robin Wright) y la Reina Hippolyta (Connie Nielsen).
+
+La trama de esta película es una gran misterio. El guión está basado en una historia escrita por Patty Jenkins, Geoff Johns (&#39;The Flash&#39;, &#39;Aquaman&#39;) y Dave Callaham (&#39;Zombieland: Mata y remata&#39;). Se espera que tenga protagonismo la tecnología y la vigilancia, teniendo en cuenta el título que hace referencia a la distopía de &#39;1984&#39; de George Orwell.""" .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#director> ns1:director "Patty Jenkins" .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#duration> ns1:duration "PT2H31M"^^xsd:int .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#genre> ns1:Genre "Fantasy" ,
+                                                                                   "Action" ,
+                                                                                   "Adventure" .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#palabrasClaves> ns1:palabrasClaves "sequel,superhero,dc extended universe,princess,dc comics" .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> ns1:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)"^^xsd:float .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> ns1:porcentajeIMDB "5.4% (por sobre un total de 203495 criticas)"^^xsd:float .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> ns1:porcentajeTomatoes "59% (por sobre un total de 426 criticas"^^xsd:float .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#producer> ns1:producer "Warner Bros. Pictures" .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#trailer> ns1:trailer "Wonder Woman 1984 is a movie starring Gal Gadot, Chris Pine, and Kristen Wiig. Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient..." .
+
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web> ns1:Web "https://www.imdb.com/title/tt7126948/" ,
+                                                                               "https://www.rottentomatoes.com/m/wonder_woman_1984" ,
+                                                                               "https://www.ecartelera.com/peliculas/wonder-woman-1984/" ,
+                                                                               "https://www.metacritic.com/movie/wonder-woman-1984" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
-@prefix ns1: <https://schema.org/> .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#Wonder_Woman> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#Movie> ;
-    ns1:name "Wonder Woman 1984" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#actor> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#Actor> ;
-    ns1:Actor "{'@type': 'Person', 'name': 'Thomas Clay Strickland', 'url': 'https://www.metacritic.com/person/thomas-clay-strickland'}" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#author> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#Author> ;
-    ns1:Author "Dave Callaham",
-        "Geoff Johns",
-        "Patty Jenkins",
-        "William Moulton Marston" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#calification> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#Calification> ;
-    ns1:calification "PG-13" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#director> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#Director> ;
-    ns1:director "Patty Jenkins" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#genre> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#Genre> ;
-    ns1:Genre "Action",
-        "Adventure",
-        "Fantasy" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#producer> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#Producer> ;
-    ns1:producer "Warner Bros. Pictures" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#web> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#Web> ;
-    ns1:Web "https://www.ecartelera.com/peliculas/wonder-woman-1984/",
-        "https://www.imdb.com/title/tt7126948/",
-        "https://www.metacritic.com/movie/wonder-woman-1984",
-        "https://www.rottentomatoes.com/m/wonder_woman_1984" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#description> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#description> ;
-    ns1:description """&#39;Wonder Woman 1984&#39; llegará a la pantalla grande el próximo 5 de junio de 2020, de nuevo con la actriz israelí Gal Gadot en el papel de la Mujer Maravilla y Patty Jenkins detrás de las cámaras. La secuela de &#39;Wonder Woman&#39; contará además con el regreso de Chris Pine (&#39;Star Trek. Más allá&#39;) como Steve Trevor. La película sigue a Diana en su vida durante los años 80 en Estados Unidos. En esta ocasión, Diana se enfrentará a nuevos enemigos. Su principal antagonista es la arqueóloga británica Barbara Minerva, que será interpretada por Kristen Wigg (&#39;Cazafantasmas&#39;). La científica tiene un alter ego, la villana Cheetah que tiene una fuerza y agilidad sobrehumanas. Otro enemigo a tener en cuenta será el empresario Maxwel Lord, interpretado por Pedro Pascal (&#39;The Mandalorian&#39;). Este personaje es un arrogante con la habilidad de manipular a otros a su antojo. En los cómics, Max Lord tiene poderes mentales. También aparecen en esta cinta las guerreras amazonas Antiope (Robin Wright) y la Reina Hippolyta (Connie Nielsen).\r
-\r
-La trama de esta película es una gran misterio. El guión está basado en una historia escrita por Patty Jenkins, Geoff Johns (&#39;The Flash&#39;, &#39;Aquaman&#39;) y Dave Callaham (&#39;Zombieland: Mata y remata&#39;). Se espera que tenga protagonismo la tecnología y la vigilancia, teniendo en cuenta el título que hace referencia a la distopía de &#39;1984&#39; de George Orwell.""" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#duration> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#duration> ;
-    ns1:duration "PT2H31M" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#palabrasClaves> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#palabrasClaves> ;
-    ns1:palabrasClaves "sequel,superhero,dc extended universe,princess,dc comics" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeECartelera> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeECartelera> ;
-    ns1:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeIMDB> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeIMDB> ;
-    ns1:porcentajeIMDB "5.4% (por sobre un total de 201008 criticas)" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeMetacritic> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeMetacritic> ;
-    ns1:porcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeTomatoes> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#porcentajeTomatoes> ;
-    ns1:porcentajeTomatoes "59% (por sobre un total de 426 criticas" .
-
-<https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#trailer> a <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#trailer> ;
-    ns1:trailer "Wonder Woman 1984 is a movie starring Gal Gadot, Chris Pine, and Kristen Wiig. Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient..." .
-

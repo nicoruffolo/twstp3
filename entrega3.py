@@ -409,7 +409,7 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
     
      
     g = Graph()
-    Mi_ontologia = Namespace("https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#")
+    Mi_ontologia = Namespace("https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#")
     Ontología_de_schema = Namespace("https://schema.org/")
     data = {}
     data['movies'] = []
@@ -434,59 +434,59 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
     'duracion': duracion,
     'palabrasClaves': palabrasClaves})
     peli =  Mi_ontologia["Wonder_Woman"]
-    g.add((peli, RDF.type, Mi_ontologia["Movie"]))  ## genera la relacion #Literal(nombre,datatype=XSD.int)
+    g.add((peli, RDF.type, Mi_ontologia["schema:movie"]))  ## genera la relacion #Literal(nombre,datatype=XSD.int)
     g.add((peli,Ontología_de_schema["name"], Literal(nombre)))
     
     peli =  Mi_ontologia["calification"]
-    g.add((peli, RDF.type, Mi_ontologia["Calification"]))  
-    g.add((peli,Ontología_de_schema["calification"], Literal(calificacion)))
+    g.add((peli, RDF.type, Mi_ontologia["schema:calification"]))  
+    g.add((peli,Ontología_de_schema["calification"], Literal(calificacion,datatype=XSD.float)))
     
   
     for autor in arregloAutores:
        peli =  Mi_ontologia["author"]
-       g.add((peli, RDF.type, Mi_ontologia["Author"]))  
+       g.add((peli, RDF.type, Mi_ontologia["schema:author"]))  
        g.add((peli,Ontología_de_schema["Author"], Literal(autor)))        
     
     peli =  Mi_ontologia["director"]
-    g.add((peli, RDF.type, Mi_ontologia["Director"]))  
+    g.add((peli, RDF.type, Mi_ontologia["schema:director"]))  
     g.add((peli,Ontología_de_schema["director"], Literal(director)))
     
     for genero in arregloGeneros:
        peli =  Mi_ontologia["genre"]
-       g.add((peli, RDF.type, Mi_ontologia["Genre"]))  
+       g.add((peli, RDF.type, Mi_ontologia["schema:genre"]))  
        g.add((peli,Ontología_de_schema["Genre"], Literal(genero)))    
     
     peli =  Mi_ontologia["producer"]
-    g.add((peli, RDF.type, Mi_ontologia["Producer"]))  
+    g.add((peli, RDF.type, Mi_ontologia["schema:producer"]))  
     g.add((peli,Ontología_de_schema["producer"], Literal(productora)))
 
     peli =  Mi_ontologia["trailer"]
-    g.add((peli, RDF.type, Mi_ontologia["trailer"]))  
+    g.add((peli, RDF.type, Mi_ontologia["schema:trailer"]))  
     g.add((peli,Ontología_de_schema["trailer"], Literal(trailer)))
 
     peli =  Mi_ontologia["duration"]
-    g.add((peli, RDF.type, Mi_ontologia["duration"]))  
-    g.add((peli,Ontología_de_schema["duration"], Literal(duracion)))
+    g.add((peli, RDF.type, Mi_ontologia["schema:duration"]))  
+    g.add((peli,Ontología_de_schema["duration"], Literal(duracion,datatype=XSD.int)))
 
     peli =  Mi_ontologia["description"]
-    g.add((peli, RDF.type, Mi_ontologia["description"]))  
+    g.add((peli, RDF.type, Mi_ontologia["schema:description"]))  
     g.add((peli,Ontología_de_schema["description"], Literal(descripcion)))
 
     peli =  Mi_ontologia["porcentajeTomatoes"]
     g.add((peli, RDF.type, Mi_ontologia["porcentajeTomatoes"]))  
-    g.add((peli,Ontología_de_schema["porcentajeTomatoes"], Literal(porcentajeTomatoes)))
+    g.add((peli,Ontología_de_schema["porcentajeTomatoes"], Literal(porcentajeTomatoes,datatype=XSD.float)))
 
     peli =  Mi_ontologia["porcentajeIMDB"]
     g.add((peli, RDF.type, Mi_ontologia["porcentajeIMDB"]))  
-    g.add((peli,Ontología_de_schema["porcentajeIMDB"], Literal(porcentajeIMDB)))
+    g.add((peli,Ontología_de_schema["porcentajeIMDB"], Literal(porcentajeIMDB,datatype=XSD.float)))
 
     peli =  Mi_ontologia["porcentajeMetacritic"]
     g.add((peli, RDF.type, Mi_ontologia["porcentajeMetacritic"]))  
-    g.add((peli,Ontología_de_schema["porcentajeMetacritic"], Literal(porcentajeMetacritic)))
+    g.add((peli,Ontología_de_schema["porcentajeMetacritic"], Literal(porcentajeMetacritic,datatype=XSD.float)))
 
     peli =  Mi_ontologia["porcentajeECartelera"]
     g.add((peli, RDF.type, Mi_ontologia["porcentajeECartelera"]))  
-    g.add((peli,Ontología_de_schema["porcentajeECartelera"], Literal(porcentajeECartelera)))
+    g.add((peli,Ontología_de_schema["porcentajeECartelera"], Literal(porcentajeECartelera,datatype=XSD.float)))
 
 
     peli =  Mi_ontologia["palabrasClaves"]
@@ -495,12 +495,12 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
     
     for actor in arregloPersonajes:
        peli =  Mi_ontologia["actor"]
-       g.add((peli, RDF.type, Mi_ontologia["Actor"]))  
+       g.add((peli, RDF.type, Mi_ontologia["schema:actor"]))  
        g.add((peli,Ontología_de_schema["Actor"], Literal(actor)))      
                
     for web in arregloWeb:
        peli =  Mi_ontologia["web"]
-       g.add((peli, RDF.type, Mi_ontologia["Web"]))  
+       g.add((peli, RDF.type, Mi_ontologia["web"]))  
        g.add((peli,Ontología_de_schema["Web"], Literal(web)))
     g.serialize(destination='final.ttl', format='turtle')
   
