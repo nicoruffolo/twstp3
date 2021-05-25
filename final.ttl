@@ -1,10 +1,5 @@
 @prefix ns1: <https://schema.org/> .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Movie> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#genre> ;
-    ns1:genre "Action",
-        "Adventure",
-        "Fantasy" .
-
 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Wonder_Woman> a ns1:Movie .
 
 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#duration> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Duration> ;
@@ -14,7 +9,7 @@
     ns1:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
 
 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeIMDB> ;
-    ns1:porcentajeIMDB "5.4% (por sobre un total de 203933 criticas)" .
+    ns1:porcentajeIMDB "5.4% (por sobre un total de 204185 criticas)" .
 
 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic> ;
     ns1:porcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
@@ -49,8 +44,8 @@ ns1:autorPattyJenkins a ns1:Person ;
 ns1:autorWilliamMoultonMarston a ns1:Person ;
     ns1:name "WilliamMoultonMarston" .
 
-ns1:director a ns1:Person ;
-    ns1:schema:name "Patty Jenkins" .
+ns1:director a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Person> ;
+    ns1:name "Patty Jenkins" .
 
 ns1:producer a ns1:Person ;
     ns1:producer "Warner Bros. Pictures" .

@@ -74,34 +74,24 @@ ns1:trailer rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://schema.org/actor
-<http://schema.org/actor> rdf:type owl:ObjectProperty ;
-                          rdfs:domain <http://schema.org/Movie> ;
-                          rdfs:range <http://schema.org/Person> .
+<http://schema.org/actor> rdf:type owl:ObjectProperty .
 
 
 ###  http://schema.org/author
-<http://schema.org/author> rdf:type owl:ObjectProperty ;
-                           rdfs:domain <http://schema.org/Movie> ;
-                           rdfs:range <http://schema.org/Person> .
+<http://schema.org/author> rdf:type owl:ObjectProperty .
 
 
 ###  http://schema.org/director
-<http://schema.org/director> rdf:type owl:ObjectProperty ;
-                             rdfs:domain <http://schema.org/Movie> ;
-                             rdfs:range <http://schema.org/Person> .
+<http://schema.org/director> rdf:type owl:ObjectProperty .
 
 
 ###  http://schema.org/producer
-<http://schema.org/producer> rdf:type owl:ObjectProperty ;
-                             rdfs:domain <http://schema.org/Movie> ;
-                             rdfs:range <http://schema.org/Person> .
+<http://schema.org/producer> rdf:type owl:ObjectProperty .
 
 
 ###  http://schema.org/trailer
 <http://schema.org/trailer> rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf owl:topObjectProperty ;
-                            rdfs:domain <http://schema.org/Movie> ;
-                            rdfs:range <http://schema.org/VideoObject> .
+                            rdfs:subPropertyOf owl:topObjectProperty .
 
 
 #################################################################
@@ -113,39 +103,22 @@ ns1:trailer rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.org/description
-<http://schema.org/description> rdf:type owl:DatatypeProperty ;
-                                rdfs:domain <http://schema.org/Movie> .
+<http://schema.org/description> rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/genre
-<http://schema.org/genre> rdf:type owl:DatatypeProperty ;
-                          rdfs:domain <http://schema.org/Movie> .
+<http://schema.org/genre> rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/name
 <http://schema.org/name> rdf:type owl:DatatypeProperty ;
-                         rdfs:domain <http://schema.org/Person> .
+                         rdfs:domain <http://schema.org/Movie> ,
+                                     <http://schema.org/Person> .
 
 
 #################################################################
 #    Classes
 #################################################################
-
-###  http://PorcentajeEcartelera
-<http://PorcentajeEcartelera> rdf:type owl:Class .
-
-
-###  http://PorcentajeImbd
-<http://PorcentajeImbd> rdf:type owl:Class .
-
-
-###  http://PorcentajeMetacritic
-<http://PorcentajeMetacritic> rdf:type owl:Class .
-
-
-###  http://PorcentajeTomatotes
-<http://PorcentajeTomatotes> rdf:type owl:Class .
-
 
 ###  http://schema.org/Duration
 <http://schema.org/Duration> rdf:type owl:Class .
@@ -163,28 +136,8 @@ ns1:trailer rdf:type owl:AnnotationProperty .
 <http://schema.org/Url> rdf:type owl:Class .
 
 
-###  http://schema.org/VideoObject
-<http://schema.org/VideoObject> rdf:type owl:Class .
-
-
 ###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#web
 :web rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#schema:calification
-:schema:calification rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#schema:description
-:schema:description rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#schema:genre
-:schema:genre rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#schema:producer
-:schema:producer rdf:type owl:Class .
 
 
 #################################################################

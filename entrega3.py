@@ -436,8 +436,8 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
     g.add((peli, RDF.type, Ontología_de_schema["Movie"]))  ## genera la relacion #Literal(nombre,datatype=XSD.int)
     
     peli =  Ontología_de_schema["director"]
-    g.add((peli, RDF.type, Ontología_de_schema["Person"]))
-    g.add((peli,Ontología_de_schema["schema:name"], Literal(director)))   
+    g.add((peli, RDF.type, Mi_ontologia["Person"]))
+    g.add((peli,Ontología_de_schema["name"], Literal(director)))   
    
     peli =  Ontología_de_schema["producer"]
     g.add((peli, RDF.type, Ontología_de_schema["Person"]))  
@@ -473,10 +473,10 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
        g.add((nodoweb, RDF.type,Ontología_de_schema["Web"]))  
        g.add((nodoweb,Ontología_de_schema["Web"], Literal(web)))
     
-    for genero in arregloGeneros:
-       nodogenero =  Mi_ontologia["Movie"]
-       g.add((nodogenero, RDF.type, Mi_ontologia["genre"]))  
-       g.add((nodogenero,Ontología_de_schema["genre"], Literal(genero))) 
+   # for genero in arregloGeneros:
+   #    nodogenero =  Ontología_de_schema["genre"]
+   #    g.add((nodogenero, RDF.type, Ontología_de_schema["Movie"]))  
+   #    g.add((nodogenero,Ontología_de_schema["genre"], Literal(genero))) 
 
    # peli =  Mi_ontologia["calification"]
    # g.add((peli, RDF.type, Mi_ontologia["schema:calification"]))  

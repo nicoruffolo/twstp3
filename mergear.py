@@ -1,4 +1,4 @@
-filenames = ['owlgenerado.ttl', 'final.ttl']
+filenames = ['owlgenfinal.ttl', 'final.ttl']
 with open('result.ttl', 'w') as outfile:
     for fname in filenames:
         with open(fname) as infile:
