@@ -1,4 +1,25 @@
-@prefix ns1: <https://schema.org/> .
+@prefix ns1: <http://schema.org/> .
+
+ns1:actor a ns1:Person ;
+    ns1:actor "{'@type': 'Person', 'name': 'Thomas Clay Strickland', 'url': 'https://www.metacritic.com/person/thomas-clay-strickland'}" .
+
+ns1:autor1 a ns1:Person ;
+    ns1:name "PattyJenkins" .
+
+ns1:autor2 a ns1:Person ;
+    ns1:name "GeoffJohns" .
+
+ns1:autor3 a ns1:Person ;
+    ns1:name "DaveCallaham" .
+
+ns1:director a ns1:Person ;
+    ns1:name "Patty Jenkins" .
+
+ns1:producer a ns1:Person ;
+    ns1:producer "Warner Bros. Pictures" .
+
+ns1:trailer a ns1:VideoObject ;
+    ns1:trailer "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing." .
 
 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Wonder_Woman> a ns1:Movie .
 
@@ -9,7 +30,7 @@
     ns1:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
 
 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeIMDB> ;
-    ns1:porcentajeIMDB "5.4% (por sobre un total de 204185 criticas)" .
+    ns1:porcentajeIMDB "5.4% (por sobre un total de 204290 criticas)" .
 
 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic> ;
     ns1:porcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
@@ -17,39 +38,15 @@
 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeTomatoes> ;
     ns1:porcentajeTomatoes "59% (por sobre un total de 426 criticas" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#webhttps://www.ecartelera.com/peliculas/wonder-woman-1984/> a ns1:Web ;
-    ns1:Web "https://www.ecartelera.com/peliculas/wonder-woman-1984/" .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#webhttps://www.imdb.com/title/tt7126948/> a ns1:Web ;
-    ns1:Web "https://www.imdb.com/title/tt7126948/" .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#webhttps://www.metacritic.com/movie/wonder-woman-1984> a ns1:Web ;
-    ns1:Web "https://www.metacritic.com/movie/wonder-woman-1984" .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#webhttps://www.rottentomatoes.com/m/wonder_woman_1984> a ns1:Web ;
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web1> a ns1:Web ;
     ns1:Web "https://www.rottentomatoes.com/m/wonder_woman_1984" .
 
-ns1:actor a ns1:Person ;
-    ns1:actor "{'@type': 'Person', 'name': 'Thomas Clay Strickland', 'url': 'https://www.metacritic.com/person/thomas-clay-strickland'}" .
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web2> a ns1:Web ;
+    ns1:Web "https://www.imdb.com/title/tt7126948/" .
 
-ns1:autorDaveCallaham a ns1:Person ;
-    ns1:name "DaveCallaham" .
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web3> a ns1:Web ;
+    ns1:Web "https://www.metacritic.com/movie/wonder-woman-1984" .
 
-ns1:autorGeoffJohns a ns1:Person ;
-    ns1:name "GeoffJohns" .
-
-ns1:autorPattyJenkins a ns1:Person ;
-    ns1:name "PattyJenkins" .
-
-ns1:autorWilliamMoultonMarston a ns1:Person ;
-    ns1:name "WilliamMoultonMarston" .
-
-ns1:director a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Person> ;
-    ns1:name "Patty Jenkins" .
-
-ns1:producer a ns1:Person ;
-    ns1:producer "Warner Bros. Pictures" .
-
-ns1:trailer a ns1:VideoObject ;
-    ns1:trailer "Wonder Woman 1984 is a movie starring Gal Gadot, Chris Pine, and Kristen Wiig. Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient..." .
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web4> a ns1:Web ;
+    ns1:Web "https://www.ecartelera.com/peliculas/wonder-woman-1984/" .
 

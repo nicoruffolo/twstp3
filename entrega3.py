@@ -173,10 +173,11 @@ def imprimirInformacionImdb(dataImdb):
             if (i <= 5):                                
                 i = i + 1     
                 autoresIMDB.append(creat)    
-                     
         for element in autoresIMDB:
-            print ("       -"+element["name"])                
-        print()
+        	if("name" in element):
+        		print ("       -"+element["name"])                
+        
+    
    
         #CREATOR (código de prueba para los creator) (funcionando mejor mas arriba)
         """
@@ -188,8 +189,10 @@ def imprimirInformacionImdb(dataImdb):
         print((key["creator"][5]["name"]))        
         """
         
-        # Director    
-        director=key["director"]["name"]                 
+        # Director
+          
+        director=key["director"][0]["name"] 
+
         print("Director: "+director)
         dataIMDB.append(director)
         print()
@@ -410,7 +413,7 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
      
     g = Graph()
     Mi_ontologia = Namespace("https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#")
-    Ontología_de_schema = Namespace("https://schema.org/")
+    Ontología_de_schema = Namespace("http://schema.org/")
     data = {}
     data['movies'] = []
     
@@ -436,7 +439,7 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
     g.add((peli, RDF.type, Ontología_de_schema["Movie"]))  ## genera la relacion #Literal(nombre,datatype=XSD.int)
     
     peli =  Ontología_de_schema["director"]
-    g.add((peli, RDF.type, Mi_ontologia["Person"]))
+    g.add((peli, RDF.type, Ontología_de_schema["Person"]))
     g.add((peli,Ontología_de_schema["name"], Literal(director)))   
    
     peli =  Ontología_de_schema["producer"]
@@ -453,11 +456,13 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
     g.add((peli,Ontología_de_schema["duration"], Literal(duracion)))
 
    
+    j=0
     for autor in arregloAutores:
-       nodoautor =  Ontología_de_schema["autor"+autor.replace(' ', '')]
+       j=j+1
+       nodoautor =  Ontología_de_schema["autor"+str(j)]
        g.add((nodoautor, RDF.type, Ontología_de_schema["Person"]))  
        g.add((nodoautor,Ontología_de_schema["name"], Literal(autor.replace(' ', ''))))
-   
+    j=0
 
     for actor in arregloPersonajes:
        nodopersonaje =  Ontología_de_schema["actor"]
@@ -468,11 +473,13 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
    # g.add((peli, RDF.type, Mi_ontologia["palabrasClaves"]))  
    # g.add((peli,Ontología_de_schema["palabrasClaves"], Literal(palabrasClaves)))
 
+    j=0
     for web in arregloWeb:
-       nodoweb =  Mi_ontologia["web"+web.replace(' ', '')]
+       j=j+1
+       nodoweb =  Mi_ontologia["web"+str(j)]
        g.add((nodoweb, RDF.type,Ontología_de_schema["Web"]))  
        g.add((nodoweb,Ontología_de_schema["Web"], Literal(web)))
-    
+    j=0
    # for genero in arregloGeneros:
    #    nodogenero =  Ontología_de_schema["genre"]
    #    g.add((nodogenero, RDF.type, Ontología_de_schema["Movie"]))  
@@ -561,15 +568,21 @@ def mergePeliculas(dataTomatoes, autoresTomatoes, actoresTomatoes, generosTomato
     print()
     
     print("Los autores de la película son: ")
+   # import pprint
+   # p=pprint.PrettyPrinter(indent=4) 
+   # p.pprint("autorestomatoes{}".format(autoresTomatoes))
+   # p.pprint(autoresIMDB)
+   # exit()
     if (len(autoresIMDB) >= len(autoresTomatoes)):        
         for autores in autoresIMDB:
-            print(autores["name"])
-            arregloAutores.append(autores["name"])
+        	if("name" in autores.keys()):
+        		print(autores["name"])
+        		arregloAutores.append(autores["name"])
           
     else:
-        for autores in autoresTomatoes:
-            print(autores["name"])
-            arregloAutores.append(autores["name"])
+    	for autores in autoresTomatoes:
+            print(autores)
+            arregloAutores.append(autores)
     print()
     
     director = dataIMDB[3]
