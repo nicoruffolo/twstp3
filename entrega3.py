@@ -253,10 +253,10 @@ def imprimirInformacionImdb(dataImdb):
         print()
                        
         # Palabras claves
-        palabrasClaves = key["keywords"]
-        print("Palabras claves: "+palabrasClaves)
-        dataIMDB.append(palabrasClaves)
-        print()
+   #     palabrasClaves = key["keywords"]
+   #     print("Palabras claves: "+palabrasClaves)
+   #     dataIMDB.append(palabrasClaves)
+   #     print()
         
          
 # Se imprime la info de la película en la web de MetaCritic           
@@ -405,7 +405,7 @@ def imprimirInformacionEcartelera(dataEcartelera):
         
         
 # Método que exporta a JSON el merge recibido        
-def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arregloGeneros, productora, arregloActores, arregloPersonajes, porcentajeTomatoes, porcentajeIMDB, porcentajeMetacritic, porcentajeECartelera, arregloCriticas, descripcion, trailer, duracion, palabrasClaves):
+def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arregloGeneros, productora, arregloActores, arregloPersonajes, porcentajeTomatoes, porcentajeIMDB, porcentajeMetacritic, porcentajeECartelera, arregloCriticas, descripcion, trailer, duracion):
     
      
     g = Graph()
@@ -431,77 +431,100 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
     'arregloCriticas': arregloCriticas,
     'descripcion': descripcion,
     'trailer': trailer,
-    'duracion': duracion,
-    'palabrasClaves': palabrasClaves})
+    'duracion': duracion})
     peli =  Mi_ontologia["Wonder_Woman"]
-    g.add((peli, RDF.type, Mi_ontologia["schema:movie"]))  ## genera la relacion #Literal(nombre,datatype=XSD.int)
-    g.add((peli,Ontología_de_schema["name"], Literal(nombre)))
+    g.add((peli, RDF.type, Ontología_de_schema["Movie"]))  ## genera la relacion #Literal(nombre,datatype=XSD.int)
     
-    peli =  Mi_ontologia["calification"]
-    g.add((peli, RDF.type, Mi_ontologia["schema:calification"]))  
-    g.add((peli,Ontología_de_schema["calification"], Literal(calificacion,datatype=XSD.float)))
-    
-  
-    for autor in arregloAutores:
-       peli =  Mi_ontologia["author"]
-       g.add((peli, RDF.type, Mi_ontologia["schema:author"]))  
-       g.add((peli,Ontología_de_schema["Author"], Literal(autor)))        
-    
-    peli =  Mi_ontologia["director"]
-    g.add((peli, RDF.type, Mi_ontologia["schema:director"]))  
-    g.add((peli,Ontología_de_schema["director"], Literal(director)))
-    
-    for genero in arregloGeneros:
-       peli =  Mi_ontologia["genre"]
-       g.add((peli, RDF.type, Mi_ontologia["schema:genre"]))  
-       g.add((peli,Ontología_de_schema["Genre"], Literal(genero)))    
-    
-    peli =  Mi_ontologia["producer"]
-    g.add((peli, RDF.type, Mi_ontologia["schema:producer"]))  
-    g.add((peli,Ontología_de_schema["producer"], Literal(productora)))
+    peli =  Ontología_de_schema["director"]
+    g.add((peli, RDF.type, Ontología_de_schema["Person"]))
+    g.add((peli,Ontología_de_schema["schema:name"], Literal(director)))   
+   
+    peli =  Ontología_de_schema["producer"]
+    g.add((peli, RDF.type, Ontología_de_schema["Person"]))  
+    g.add((peli,Ontología_de_schema["producer"], Literal(productora)))  
 
-    peli =  Mi_ontologia["trailer"]
-    g.add((peli, RDF.type, Mi_ontologia["schema:trailer"]))  
+    peli =  Ontología_de_schema["trailer"]
+    g.add((peli, RDF.type, Ontología_de_schema["VideoObject"]))  
     g.add((peli,Ontología_de_schema["trailer"], Literal(trailer)))
 
-    peli =  Mi_ontologia["duration"]
-    g.add((peli, RDF.type, Mi_ontologia["schema:duration"]))  
-    g.add((peli,Ontología_de_schema["duration"], Literal(duracion,datatype=XSD.int)))
 
-    peli =  Mi_ontologia["description"]
-    g.add((peli, RDF.type, Mi_ontologia["schema:description"]))  
-    g.add((peli,Ontología_de_schema["description"], Literal(descripcion)))
+    peli =  Mi_ontologia["duration"]
+    g.add((peli, RDF.type, Mi_ontologia["Duration"]))  
+    g.add((peli,Ontología_de_schema["duration"], Literal(duracion)))
+
+   
+    for autor in arregloAutores:
+       nodoautor =  Ontología_de_schema["autor"+autor.replace(' ', '')]
+       g.add((nodoautor, RDF.type, Ontología_de_schema["Person"]))  
+       g.add((nodoautor,Ontología_de_schema["name"], Literal(autor.replace(' ', ''))))
+   
+
+    for actor in arregloPersonajes:
+       nodopersonaje =  Ontología_de_schema["actor"]
+       g.add((nodopersonaje, RDF.type, Ontología_de_schema["Person"]))  
+       g.add((nodopersonaje,Ontología_de_schema["actor"], Literal(actor))) 
+
+   # peli =  Mi_ontologia["palabrasClaves"]
+   # g.add((peli, RDF.type, Mi_ontologia["palabrasClaves"]))  
+   # g.add((peli,Ontología_de_schema["palabrasClaves"], Literal(palabrasClaves)))
+
+    for web in arregloWeb:
+       nodoweb =  Mi_ontologia["web"+web.replace(' ', '')]
+       g.add((nodoweb, RDF.type,Ontología_de_schema["Web"]))  
+       g.add((nodoweb,Ontología_de_schema["Web"], Literal(web)))
+    
+    for genero in arregloGeneros:
+       nodogenero =  Mi_ontologia["Movie"]
+       g.add((nodogenero, RDF.type, Mi_ontologia["genre"]))  
+       g.add((nodogenero,Ontología_de_schema["genre"], Literal(genero))) 
+
+   # peli =  Mi_ontologia["calification"]
+   # g.add((peli, RDF.type, Mi_ontologia["schema:calification"]))  
+   # g.add((peli,Ontología_de_schema["calification"], Literal(calificacion,datatype=XSD.float)))
+    
+  
+         
+    
+  #  peli =  Mi_ontologia["director"]
+  #  g.add((peli, RDF.type, Mi_ontologia["schema:director"]))  
+  #  g.add((peli,Ontología_de_schema["director"], Literal(director)))
+    
+ #   for genero in arregloGeneros:
+ #      peli =  Mi_ontologia["genre"]
+ #      g.add((peli, RDF.type, Mi_ontologia["schema:genre"]))  
+  #     g.add((peli,Ontología_de_schema["Genre"], Literal(genero)))    
+    
+ #   peli =  Mi_ontologia["producer"]
+ #   g.add((peli, RDF.type, Mi_ontologia["schema:producer"]))  
+ #   g.add((peli,Ontología_de_schema["producer"], Literal(productora)))
+
+ #   peli =  Mi_ontologia["trailer"]
+ #   g.add((peli, RDF.type, Mi_ontologia["schema:trailer"]))  
+ #   g.add((peli,Ontología_de_schema["trailer"], Literal(trailer)))
+
+
+
+  #  peli =  Mi_ontologia["description"]
+  #  g.add((peli, RDF.type, Mi_ontologia["schema:description"]))  
+  #  g.add((peli,Ontología_de_schema["description"], Literal(descripcion)))
 
     peli =  Mi_ontologia["porcentajeTomatoes"]
-    g.add((peli, RDF.type, Mi_ontologia["porcentajeTomatoes"]))  
-    g.add((peli,Ontología_de_schema["porcentajeTomatoes"], Literal(porcentajeTomatoes,datatype=XSD.float)))
+    g.add((peli, RDF.type, Mi_ontologia["PorcentajeTomatoes"]))  
+    g.add((peli,Ontología_de_schema["porcentajeTomatoes"], Literal(porcentajeTomatoes)))
 
     peli =  Mi_ontologia["porcentajeIMDB"]
-    g.add((peli, RDF.type, Mi_ontologia["porcentajeIMDB"]))  
-    g.add((peli,Ontología_de_schema["porcentajeIMDB"], Literal(porcentajeIMDB,datatype=XSD.float)))
+    g.add((peli, RDF.type, Mi_ontologia["PorcentajeIMDB"]))  
+    g.add((peli,Ontología_de_schema["porcentajeIMDB"], Literal(porcentajeIMDB)))
 
     peli =  Mi_ontologia["porcentajeMetacritic"]
-    g.add((peli, RDF.type, Mi_ontologia["porcentajeMetacritic"]))  
-    g.add((peli,Ontología_de_schema["porcentajeMetacritic"], Literal(porcentajeMetacritic,datatype=XSD.float)))
+    g.add((peli, RDF.type, Mi_ontologia["PorcentajeMetacritic"]))  
+    g.add((peli,Ontología_de_schema["porcentajeMetacritic"], Literal(porcentajeMetacritic)))
 
     peli =  Mi_ontologia["porcentajeECartelera"]
-    g.add((peli, RDF.type, Mi_ontologia["porcentajeECartelera"]))  
-    g.add((peli,Ontología_de_schema["porcentajeECartelera"], Literal(porcentajeECartelera,datatype=XSD.float)))
+    g.add((peli, RDF.type, Mi_ontologia["PorcentajeECartelera"]))  
+    g.add((peli,Ontología_de_schema["porcentajeECartelera"], Literal(porcentajeECartelera)))
 
 
-    peli =  Mi_ontologia["palabrasClaves"]
-    g.add((peli, RDF.type, Mi_ontologia["palabrasClaves"]))  
-    g.add((peli,Ontología_de_schema["palabrasClaves"], Literal(palabrasClaves)))
-    
-    for actor in arregloPersonajes:
-       peli =  Mi_ontologia["actor"]
-       g.add((peli, RDF.type, Mi_ontologia["schema:actor"]))  
-       g.add((peli,Ontología_de_schema["Actor"], Literal(actor)))      
-               
-    for web in arregloWeb:
-       peli =  Mi_ontologia["web"]
-       g.add((peli, RDF.type, Mi_ontologia["web"]))  
-       g.add((peli,Ontología_de_schema["Web"], Literal(web)))
     g.serialize(destination='final.ttl', format='turtle')
   
    # with open('data.json', 'w', encoding="utf-8") as file:
@@ -616,11 +639,11 @@ def mergePeliculas(dataTomatoes, autoresTomatoes, actoresTomatoes, generosTomato
     print("Duración de la película: "+duracion)
     print()
     
-    palabrasClaves= dataIMDB[11]
-    print("Palabras claves: "+palabrasClaves)
-    print()    
+  #  palabrasClaves= dataIMDB[11]
+  #  print("Palabras claves: "+palabrasClaves)
+  #  print()    
     
-    generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arregloGeneros, productora, arregloActores, arregloPersonajes, porcentajeTomatoes, porcentajeIMDB, porcentajeMetacritic, porcentajeECartelera, arregloCriticas, descripcion, trailer, duracion, palabrasClaves)
+    generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arregloGeneros, productora, arregloActores, arregloPersonajes, porcentajeTomatoes, porcentajeIMDB, porcentajeMetacritic, porcentajeECartelera, arregloCriticas, descripcion, trailer, duracion)
         
 #pp = pprint.PrettyPrinter(indent=2)
 

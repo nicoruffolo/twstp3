@@ -1,61 +1,60 @@
 @prefix ns1: <https://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Wonder_Woman> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:movie> ;
-    ns1:name "Wonder Woman 1984" .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:actor> ;
-    ns1:Actor "{'@type': 'Person', 'name': 'Thomas Clay Strickland', 'url': 'https://www.metacritic.com/person/thomas-clay-strickland'}" .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#author> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:author> ;
-    ns1:Author "Dave Callaham",
-        "Geoff Johns",
-        "Patty Jenkins",
-        "William Moulton Marston" .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#calification> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:calification> ;
-    ns1:calification "PG-13"^^xsd:float .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#description> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:description> ;
-    ns1:description """&#39;Wonder Woman 1984&#39; llegará a la pantalla grande el próximo 5 de junio de 2020, de nuevo con la actriz israelí Gal Gadot en el papel de la Mujer Maravilla y Patty Jenkins detrás de las cámaras. La secuela de &#39;Wonder Woman&#39; contará además con el regreso de Chris Pine (&#39;Star Trek. Más allá&#39;) como Steve Trevor. La película sigue a Diana en su vida durante los años 80 en Estados Unidos. En esta ocasión, Diana se enfrentará a nuevos enemigos. Su principal antagonista es la arqueóloga británica Barbara Minerva, que será interpretada por Kristen Wigg (&#39;Cazafantasmas&#39;). La científica tiene un alter ego, la villana Cheetah que tiene una fuerza y agilidad sobrehumanas. Otro enemigo a tener en cuenta será el empresario Maxwel Lord, interpretado por Pedro Pascal (&#39;The Mandalorian&#39;). Este personaje es un arrogante con la habilidad de manipular a otros a su antojo. En los cómics, Max Lord tiene poderes mentales. También aparecen en esta cinta las guerreras amazonas Antiope (Robin Wright) y la Reina Hippolyta (Connie Nielsen).\r
-\r
-La trama de esta película es una gran misterio. El guión está basado en una historia escrita por Patty Jenkins, Geoff Johns (&#39;The Flash&#39;, &#39;Aquaman&#39;) y Dave Callaham (&#39;Zombieland: Mata y remata&#39;). Se espera que tenga protagonismo la tecnología y la vigilancia, teniendo en cuenta el título que hace referencia a la distopía de &#39;1984&#39; de George Orwell.""" .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#director> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:director> ;
-    ns1:director "Patty Jenkins" .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#duration> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:duration> ;
-    ns1:duration "PT2H31M"^^xsd:int .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#genre> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:genre> ;
-    ns1:Genre "Action",
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Movie> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#genre> ;
+    ns1:genre "Action",
         "Adventure",
         "Fantasy" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#producer> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:producer> ;
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Wonder_Woman> a ns1:Movie .
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#duration> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Duration> ;
+    ns1:duration "PT2H31M" .
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeECartelera> ;
+    ns1:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeIMDB> ;
+    ns1:porcentajeIMDB "5.4% (por sobre un total de 203933 criticas)" .
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic> ;
+    ns1:porcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeTomatoes> ;
+    ns1:porcentajeTomatoes "59% (por sobre un total de 426 criticas" .
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#webhttps://www.ecartelera.com/peliculas/wonder-woman-1984/> a ns1:Web ;
+    ns1:Web "https://www.ecartelera.com/peliculas/wonder-woman-1984/" .
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#webhttps://www.imdb.com/title/tt7126948/> a ns1:Web ;
+    ns1:Web "https://www.imdb.com/title/tt7126948/" .
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#webhttps://www.metacritic.com/movie/wonder-woman-1984> a ns1:Web ;
+    ns1:Web "https://www.metacritic.com/movie/wonder-woman-1984" .
+
+<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#webhttps://www.rottentomatoes.com/m/wonder_woman_1984> a ns1:Web ;
+    ns1:Web "https://www.rottentomatoes.com/m/wonder_woman_1984" .
+
+ns1:actor a ns1:Person ;
+    ns1:actor "{'@type': 'Person', 'name': 'Thomas Clay Strickland', 'url': 'https://www.metacritic.com/person/thomas-clay-strickland'}" .
+
+ns1:autorDaveCallaham a ns1:Person ;
+    ns1:name "DaveCallaham" .
+
+ns1:autorGeoffJohns a ns1:Person ;
+    ns1:name "GeoffJohns" .
+
+ns1:autorPattyJenkins a ns1:Person ;
+    ns1:name "PattyJenkins" .
+
+ns1:autorWilliamMoultonMarston a ns1:Person ;
+    ns1:name "WilliamMoultonMarston" .
+
+ns1:director a ns1:Person ;
+    ns1:schema:name "Patty Jenkins" .
+
+ns1:producer a ns1:Person ;
     ns1:producer "Warner Bros. Pictures" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#trailer> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#schema:trailer> ;
+ns1:trailer a ns1:VideoObject ;
     ns1:trailer "Wonder Woman 1984 is a movie starring Gal Gadot, Chris Pine, and Kristen Wiig. Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient..." .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#palabrasClaves> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#palabrasClaves> ;
-    ns1:palabrasClaves "sequel,superhero,dc extended universe,princess,dc comics" .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> ;
-    ns1:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)"^^xsd:float .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> ;
-    ns1:porcentajeIMDB "5.4% (por sobre un total de 203495 criticas)"^^xsd:float .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> ;
-    ns1:porcentajeMetacritic "60% (por sobre un total de 57 criticas)"^^xsd:float .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> ;
-    ns1:porcentajeTomatoes "59% (por sobre un total de 426 criticas"^^xsd:float .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web> ;
-    ns1:Web "https://www.ecartelera.com/peliculas/wonder-woman-1984/",
-        "https://www.imdb.com/title/tt7126948/",
-        "https://www.metacritic.com/movie/wonder-woman-1984",
-        "https://www.rottentomatoes.com/m/wonder_woman_1984" .
 
