@@ -1,52 +1,68 @@
 @prefix ns1: <http://schema.org/> .
+@prefix ns2: <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#> .
 
-ns1:actor a ns1:Person ;
-    ns1:actor "{'@type': 'Person', 'name': 'Thomas Clay Strickland', 'url': 'https://www.metacritic.com/person/thomas-clay-strickland'}" .
+ns2:Wonder_Woman a ns1:Movie .
 
-ns1:autor1 a ns1:Person ;
+ns2:actor1 a ns1:Person ;
+    ns1:name "Thomas Clay Strickland" .
+
+ns2:actor2 a ns1:Person ;
+    ns1:name "Thomas Clay Strickland" .
+
+ns2:actor3 a ns1:Person ;
+    ns1:name "Thomas Clay Strickland" .
+
+ns2:actor4 a ns1:Person ;
+    ns1:name "Thomas Clay Strickland" .
+
+ns2:actor5 a ns1:Person ;
+    ns1:name "Thomas Clay Strickland" .
+
+ns2:actor6 a ns1:Person ;
+    ns1:name "Thomas Clay Strickland" .
+
+ns2:autor1 a ns1:Person ;
     ns1:name "PattyJenkins" .
 
-ns1:autor2 a ns1:Person ;
+ns2:autor2 a ns1:Person ;
     ns1:name "GeoffJohns" .
 
-ns1:autor3 a ns1:Person ;
+ns2:autor3 a ns1:Person ;
     ns1:name "DaveCallaham" .
 
-ns1:director a ns1:Person ;
+ns2:director a ns1:Person ;
     ns1:name "Patty Jenkins" .
 
-ns1:producer a ns1:Person ;
-    ns1:producer "Warner Bros. Pictures" .
-
-ns1:trailer a ns1:VideoObject ;
-    ns1:trailer "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing." .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Wonder_Woman> a ns1:Movie .
-
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#duration> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Duration> ;
+ns2:duration a ns1:Duration ;
     ns1:duration "PT2H31M" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeECartelera> ;
-    ns1:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
+ns2:porcentajeECartelera a ns2:PorcentajeECartelera ;
+    ns2:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeIMDB> ;
-    ns1:porcentajeIMDB "5.4% (por sobre un total de 204290 criticas)" .
+ns2:porcentajeIMDB a ns2:PorcentajeIMDB ;
+    ns2:porcentajeIMDB "5.4% (por sobre un total de 204317 criticas)" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic> ;
-    ns1:porcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
+ns2:porcentajeMetacritic a ns2:PorcentajeMetacritic ;
+    ns2:porcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> a <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeTomatoes> ;
-    ns1:porcentajeTomatoes "59% (por sobre un total de 426 criticas" .
+ns2:porcentajeTomatoes a ns2:PorcentajeTomatoes ;
+    ns2:porcentajeTomatoes "59% (por sobre un total de 426 criticas" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web1> a ns1:Web ;
-    ns1:Web "https://www.rottentomatoes.com/m/wonder_woman_1984" .
+ns2:producer a ns1:Person ;
+    ns1:name "Warner Bros. Pictures" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web2> a ns1:Web ;
-    ns1:Web "https://www.imdb.com/title/tt7126948/" .
+ns2:trailer a ns1:VideoObject ;
+    ns1:trailer "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing." .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web3> a ns1:Web ;
-    ns1:Web "https://www.metacritic.com/movie/wonder-woman-1984" .
+ns2:web1 a ns2:Web ;
+    ns2:Web "https://www.rottentomatoes.com/m/wonder_woman_1984" .
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web4> a ns1:Web ;
-    ns1:Web "https://www.ecartelera.com/peliculas/wonder-woman-1984/" .
+ns2:web2 a ns2:Web ;
+    ns2:Web "https://www.imdb.com/title/tt7126948/" .
+
+ns2:web3 a ns2:Web ;
+    ns2:Web "https://www.metacritic.com/movie/wonder-woman-1984" .
+
+ns2:web4 a ns2:Web ;
+    ns2:Web "https://www.ecartelera.com/peliculas/wonder-woman-1984/" .
 
