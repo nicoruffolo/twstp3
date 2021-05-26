@@ -1,6 +1,6 @@
 @prefix : <https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#> .
 @prefix ns1: <http://schema.org/> .
-@prefix ns2: <https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#> .
+@prefix ns2: <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -31,43 +31,43 @@ ns1:porcentajeTomatoes rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#Web
-ns2:Web rdf:type owl:AnnotationProperty .
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#Web> rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#porcentajeECartelera
-ns2:porcentajeECartelera rdf:type owl:AnnotationProperty .
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#porcentajeECartelera> rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#porcentajeIMDB
-ns2:porcentajeIMDB rdf:type owl:AnnotationProperty .
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#porcentajeIMDB> rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#porcentajeMetacritic
-ns2:porcentajeMetacritic rdf:type owl:AnnotationProperty .
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#porcentajeMetacritic> rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#porcentajeTomatoes
-ns2:porcentajeTomatoes rdf:type owl:AnnotationProperty .
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#porcentajeTomatoes> rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> rdf:type owl:AnnotationProperty .
+ns2:Web rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> rdf:type owl:AnnotationProperty .
+ns2:porcentajeECartelera rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> rdf:type owl:AnnotationProperty .
+ns2:porcentajeIMDB rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> rdf:type owl:AnnotationProperty .
+ns2:porcentajeMetacritic rdf:type owl:AnnotationProperty .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> rdf:type owl:AnnotationProperty .
+ns2:porcentajeTomatoes rdf:type owl:AnnotationProperty .
 
 
 ###  https://schema.org/Actor
@@ -159,11 +159,13 @@ ns1:trailer rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  http://schema.org/calification
-ns1:calification rdf:type owl:DatatypeProperty .
+ns1:calification rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ns1:Movie .
 
 
 ###  http://schema.org/description
-ns1:description rdf:type owl:DatatypeProperty .
+ns1:description rdf:type owl:DatatypeProperty ;
+                rdfs:domain ns1:Movie .
 
 
 ###  http://schema.org/duration
@@ -172,7 +174,8 @@ ns1:duration rdf:type owl:DatatypeProperty ;
 
 
 ###  http://schema.org/genre
-ns1:genre rdf:type owl:DatatypeProperty .
+ns1:genre rdf:type owl:DatatypeProperty ;
+          rdfs:domain ns1:Movie .
 
 
 ###  http://schema.org/name
@@ -185,24 +188,30 @@ ns1:name rdf:type owl:DatatypeProperty ;
 ns1:trailer rdf:type owl:DatatypeProperty .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#PorcentajeIMDB
-:PorcentajeIMDB rdf:type owl:DatatypeProperty ;
-                rdfs:domain <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeIMDB> .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#PorcentajeMetacritic
-:PorcentajeMetacritic rdf:type owl:DatatypeProperty ;
-                      rdfs:domain <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic> .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/entrega3delowl.ttl#PorcentajeTomatoes
-:PorcentajeTomatoes rdf:type owl:DatatypeProperty ;
-                    rdfs:domain <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeTomatoes> .
-
-
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeECartelera
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeECartelera> rdf:type owl:DatatypeProperty ;
-                                                                                        rdfs:domain <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeECartelera> .
+ns2:PorcentajeECartelera rdf:type owl:DatatypeProperty ;
+                         rdfs:domain ns2:PorcentajeECartelera .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeImdb
+ns2:PorcentajeImdb rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ns2:PorcentajeIMDB .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic
+ns2:PorcentajeMetacritic rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty ;
+                         rdfs:domain ns2:PorcentajeMetacritic .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeTomatote
+ns2:PorcentajeTomatote rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ns2:PorcentajeTomatoes .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web
+ns2:web rdf:type owl:DatatypeProperty ;
+        rdfs:domain ns2:Web .
 
 
 #################################################################
@@ -225,44 +234,24 @@ ns1:Person rdf:type owl:Class .
 ns1:VideoObject rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#PorcentajeECartelera
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeECartelera
 ns2:PorcentajeECartelera rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#PorcentajeIMDB
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeIMDB
 ns2:PorcentajeIMDB rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#PorcentajeMetacritic
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic
 ns2:PorcentajeMetacritic rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#PorcentajeTomatoes
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeTomatoes
 ns2:PorcentajeTomatoes rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#Web
-ns2:Web rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeECartelera
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeECartelera> rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeIMDB
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeIMDB> rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic> rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeTomatoes
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeTomatoes> rdf:type owl:Class .
-
-
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> rdf:type owl:Class .
+ns2:Web rdf:type owl:Class .
 
 
 #################################################################
@@ -270,202 +259,203 @@ ns2:Web rdf:type owl:Class .
 #################################################################
 
 ###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor1
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor1> rdf:type owl:NamedIndividual ,
+                                                                                  ns1:Person ;
+                                                                         ns1:name "Thomas Clay Strickland" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor2
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor2> rdf:type owl:NamedIndividual ,
+                                                                                  ns1:Person ;
+                                                                         ns1:name "Thomas Clay Strickland" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor3
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor3> rdf:type owl:NamedIndividual ,
+                                                                                  ns1:Person ;
+                                                                         ns1:name "Thomas Clay Strickland" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor4
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor4> rdf:type owl:NamedIndividual ,
+                                                                                  ns1:Person ;
+                                                                         ns1:name "Thomas Clay Strickland" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor5
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor5> rdf:type owl:NamedIndividual ,
+                                                                                  ns1:Person ;
+                                                                         ns1:name "Thomas Clay Strickland" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor6
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor6> rdf:type owl:NamedIndividual ,
+                                                                                  ns1:Person ;
+                                                                         ns1:name "Thomas Clay Strickland" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#autor1
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#autor1> rdf:type owl:NamedIndividual ,
+                                                                                  ns1:Person ;
+                                                                         ns1:name "PattyJenkins" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#autor2
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#autor2> rdf:type owl:NamedIndividual ,
+                                                                                  ns1:Person ;
+                                                                         ns1:name "GeoffJohns" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#autor3
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#autor3> rdf:type owl:NamedIndividual ,
+                                                                                  ns1:Person ;
+                                                                         ns1:name "DaveCallaham" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#director
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#director> rdf:type owl:NamedIndividual ,
+                                                                                    ns1:Person ;
+                                                                           ns1:name "Patty Jenkins" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#duration
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#duration> rdf:type owl:NamedIndividual ,
+                                                                                    ns1:Duration ;
+                                                                           ns1:duration "PT2H31M" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#producer
+<https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#producer> rdf:type owl:NamedIndividual ,
+                                                                                    ns1:Person ;
+                                                                           ns1:producer "Warner Bros. Pictures" .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Wonder_Woman
+ns2:Wonder_Woman rdf:type owl:NamedIndividual ,
+                          ns1:Movie .
+
+
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor1
 ns2:actor1 rdf:type owl:NamedIndividual ,
                     ns1:Person ;
            ns1:name "Thomas Clay Strickland" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor2
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor2
 ns2:actor2 rdf:type owl:NamedIndividual ,
                     ns1:Person ;
            ns1:name "Thomas Clay Strickland" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor3
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor3
 ns2:actor3 rdf:type owl:NamedIndividual ,
                     ns1:Person ;
            ns1:name "Thomas Clay Strickland" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor4
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor4
 ns2:actor4 rdf:type owl:NamedIndividual ,
                     ns1:Person ;
            ns1:name "Thomas Clay Strickland" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor5
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor5
 ns2:actor5 rdf:type owl:NamedIndividual ,
                     ns1:Person ;
            ns1:name "Thomas Clay Strickland" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#actor6
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor6
 ns2:actor6 rdf:type owl:NamedIndividual ,
                     ns1:Person ;
            ns1:name "Thomas Clay Strickland" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#autor1
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#autor1
 ns2:autor1 rdf:type owl:NamedIndividual ,
                     ns1:Person ;
            ns1:name "PattyJenkins" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#autor2
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#autor2
 ns2:autor2 rdf:type owl:NamedIndividual ,
                     ns1:Person ;
            ns1:name "GeoffJohns" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#autor3
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#autor3
 ns2:autor3 rdf:type owl:NamedIndividual ,
                     ns1:Person ;
            ns1:name "DaveCallaham" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#director
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#director
 ns2:director rdf:type owl:NamedIndividual ,
                       ns1:Person ;
              ns1:name "Patty Jenkins" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#duration
+###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#duration
 ns2:duration rdf:type owl:NamedIndividual ,
                       ns1:Duration ;
              ns1:duration "PT2H31M" .
 
 
-###  https://raw.githubusercontent.com//twstp3/master/finalfinal.ttl#producer
-ns2:producer rdf:type owl:NamedIndividual ,
-                      ns1:Person ;
-             ns1:producer "Warner Bros. Pictures" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Wonder_Woman
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Wonder_Woman> rdf:type owl:NamedIndividual ,
-                                                                                         ns1:Movie .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor1
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor1> rdf:type owl:NamedIndividual ,
-                                                                                   ns1:Person ;
-                                                                          ns1:name "Thomas Clay Strickland" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor2
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor2> rdf:type owl:NamedIndividual ,
-                                                                                   ns1:Person ;
-                                                                          ns1:name "Thomas Clay Strickland" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor3
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor3> rdf:type owl:NamedIndividual ,
-                                                                                   ns1:Person ;
-                                                                          ns1:name "Thomas Clay Strickland" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor4
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor4> rdf:type owl:NamedIndividual ,
-                                                                                   ns1:Person ;
-                                                                          ns1:name "Thomas Clay Strickland" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor5
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor5> rdf:type owl:NamedIndividual ,
-                                                                                   ns1:Person ;
-                                                                          ns1:name "Thomas Clay Strickland" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor6
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#actor6> rdf:type owl:NamedIndividual ,
-                                                                                   ns1:Person ;
-                                                                          ns1:name "Thomas Clay Strickland" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#autor1
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#autor1> rdf:type owl:NamedIndividual ,
-                                                                                   ns1:Person ;
-                                                                          ns1:name "PattyJenkins" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#autor2
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#autor2> rdf:type owl:NamedIndividual ,
-                                                                                   ns1:Person ;
-                                                                          ns1:name "GeoffJohns" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#autor3
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#autor3> rdf:type owl:NamedIndividual ,
-                                                                                   ns1:Person ;
-                                                                          ns1:name "DaveCallaham" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#director
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#director> rdf:type owl:NamedIndividual ,
-                                                                                     ns1:Person ;
-                                                                            ns1:name "Patty Jenkins" .
-
-
-###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#duration
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#duration> rdf:type owl:NamedIndividual ,
-                                                                                     ns1:Duration ;
-                                                                            ns1:duration "PT2H31M" .
-
-
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> rdf:type owl:NamedIndividual ,
-                                                                                                 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeECartelera> .
+ns2:porcentajeECartelera rdf:type owl:NamedIndividual ,
+                                  ns2:PorcentajeECartelera .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> rdf:type owl:NamedIndividual ,
-                                                                                           <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeIMDB> .
+ns2:porcentajeIMDB rdf:type owl:NamedIndividual ,
+                            ns2:PorcentajeIMDB .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> rdf:type owl:NamedIndividual ,
-                                                                                                 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeMetacritic> .
+ns2:porcentajeMetacritic rdf:type owl:NamedIndividual ,
+                                  ns2:PorcentajeMetacritic .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> rdf:type owl:NamedIndividual ,
-                                                                                               <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#PorcentajeTomatoes> .
+ns2:porcentajeTomatoes rdf:type owl:NamedIndividual ,
+                                ns2:PorcentajeTomatoes .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#producer
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#producer> rdf:type owl:NamedIndividual ,
-                                                                                     ns1:Person ;
-                                                                            ns1:producer "Warner Bros. Pictures" .
+ns2:producer rdf:type owl:NamedIndividual ,
+                      ns1:Person ;
+             ns1:name "Warner Bros. Pictures" ;
+             ns1:producer "Warner Bros. Pictures" .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#trailer
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#trailer> rdf:type owl:NamedIndividual ,
-                                                                                    ns1:VideoObject ;
-                                                                           ns1:trailer "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing." .
+ns2:trailer rdf:type owl:NamedIndividual ,
+                     ns1:VideoObject ;
+            ns1:trailer "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing." .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web1
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web1> rdf:type owl:NamedIndividual ,
-                                                                                 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> ;
-                                                                        <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> "https://www.rottentomatoes.com/m/wonder_woman_1984" .
+ns2:web1 rdf:type owl:NamedIndividual ,
+                  ns2:Web ;
+         ns2:Web "https://www.rottentomatoes.com/m/wonder_woman_1984" .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web2
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web2> rdf:type owl:NamedIndividual ,
-                                                                                 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> ;
-                                                                        <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> "https://www.imdb.com/title/tt7126948/" .
+ns2:web2 rdf:type owl:NamedIndividual ,
+                  ns2:Web ;
+         ns2:Web "https://www.imdb.com/title/tt7126948/" .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web3
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web3> rdf:type owl:NamedIndividual ,
-                                                                                 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> ;
-                                                                        <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> "https://www.metacritic.com/movie/wonder-woman-1984" .
+ns2:web3 rdf:type owl:NamedIndividual ,
+                  ns2:Web ;
+         ns2:Web "https://www.metacritic.com/movie/wonder-woman-1984" .
 
 
 ###  https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web4
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#web4> rdf:type owl:NamedIndividual ,
-                                                                                 <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> ;
-                                                                        <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#Web> "https://www.ecartelera.com/peliculas/wonder-woman-1984/" .
+ns2:web4 rdf:type owl:NamedIndividual ,
+                  ns2:Web ;
+         ns2:Web "https://www.ecartelera.com/peliculas/wonder-woman-1984/" .
 
 
 #################################################################
@@ -490,24 +480,21 @@ ns2:producer rdf:type owl:NamedIndividual ,
 :trailer <https://schema.org/trailer> "Wonder Woman 1984 is a movie starring Gal Gadot, Chris Pine, and Kristen Wiig. Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient..." .
 
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> rdf:type owl:AnnotationProperty ;
-                                                                                        <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeECartelera> "7,6% (por sobre un total de 20 criticas)" ;
-                                                                                        ns1:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
+ns2:porcentajeECartelera ns2:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)" ;
+                         ns1:porcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
 
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> ns1:porcentajeIMDB "5.4% (por sobre un total de 204290 criticas)" ;
-                                                                                  rdf:type owl:AnnotationProperty ;
-                                                                                  <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeIMDB> "5.4% (por sobre un total de 204317 criticas)" .
+ns2:porcentajeIMDB ns1:porcentajeIMDB "5.4% (por sobre un total de 204290 criticas)" ;
+                   ns2:porcentajeIMDB "5.4% (por sobre un total de 204317 criticas)" ,
+                                      "5.4% (por sobre un total de 204533 criticas)" .
 
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> rdf:type owl:AnnotationProperty ;
-                                                                                        <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeMetacritic> "60% (por sobre un total de 57 criticas)" ;
-                                                                                        ns1:porcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
+ns2:porcentajeMetacritic ns2:porcentajeMetacritic "60% (por sobre un total de 57 criticas)" ;
+                         ns1:porcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
 
 
-<https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> rdf:type owl:AnnotationProperty ;
-                                                                                      <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#porcentajeTomatoes> "59% (por sobre un total de 426 criticas" ;
-                                                                                      ns1:porcentajeTomatoes "59% (por sobre un total de 426 criticas" .
+ns2:porcentajeTomatoes ns2:porcentajeTomatoes "59% (por sobre un total de 426 criticas" ;
+                       ns1:porcentajeTomatoes "59% (por sobre un total de 426 criticas" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

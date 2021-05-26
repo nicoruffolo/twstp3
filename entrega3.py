@@ -437,6 +437,12 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
     'duracion': duracion})
     peli =  Mi_ontologia["Wonder_Woman"]
     g.add((peli, RDF.type, Ontología_de_schema["Movie"]))  ## genera la relacion #Literal(nombre,datatype=XSD.int)
+    g.add((peli,Ontología_de_schema["description"], Literal(descripcion)))
+    g.add((peli,Ontología_de_schema["calification"], Literal(calificacion)))
+    for genero in arregloGeneros:
+       g.add((peli, Ontología_de_schema["genre"],Literal(genero)))  
+       
+
     
     peli =  Mi_ontologia["director"]
     g.add((peli, RDF.type, Ontología_de_schema["Person"]))
@@ -478,7 +484,7 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
        j=j+1
        nodoweb =  Mi_ontologia["web"+str(j)]
        g.add((nodoweb, RDF.type,Mi_ontologia["Web"]))  
-       g.add((nodoweb,Mi_ontologia["Web"], Literal(web)))
+       g.add((nodoweb,Mi_ontologia["web"], Literal(web)))
     j=0
    # for genero in arregloGeneros:
    #    nodogenero =  Ontología_de_schema["genre"]
@@ -490,8 +496,6 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
    # g.add((peli,Ontología_de_schema["calification"], Literal(calificacion,datatype=XSD.float)))
     
     
-    ## FALTA: DESCRIPCION, GENERO, CALIFICACION, PORCENTAJES DE LAS 4, WEB, 
-    ## DESEABLE: KEYWORDS
   
          
     
@@ -520,19 +524,19 @@ def  generarJson(arregloWeb, nombre, calificacion, arregloAutores, director, arr
 
     peli =  Mi_ontologia["porcentajeTomatoes"]
     g.add((peli, RDF.type, Mi_ontologia["PorcentajeTomatoes"]))  
-    g.add((peli,Mi_ontologia["porcentajeTomatoes"], Literal(porcentajeTomatoes)))
+    g.add((peli,Mi_ontologia["PorcentajeTomatote"], Literal(porcentajeTomatoes)))
 
     peli =  Mi_ontologia["porcentajeIMDB"]
     g.add((peli, RDF.type, Mi_ontologia["PorcentajeIMDB"]))  
-    g.add((peli,Mi_ontologia["porcentajeIMDB"], Literal(porcentajeIMDB)))
+    g.add((peli,Mi_ontologia["PorcentajeImdb"], Literal(porcentajeIMDB)))
 
     peli =  Mi_ontologia["porcentajeMetacritic"]
     g.add((peli, RDF.type, Mi_ontologia["PorcentajeMetacritic"]))  
-    g.add((peli,Mi_ontologia["porcentajeMetacritic"], Literal(porcentajeMetacritic)))
+    g.add((peli,Mi_ontologia["PorcentajeMetacritic"], Literal(porcentajeMetacritic)))
 
     peli =  Mi_ontologia["porcentajeECartelera"]
     g.add((peli, RDF.type, Mi_ontologia["PorcentajeECartelera"]))  
-    g.add((peli,Mi_ontologia["porcentajeECartelera"], Literal(porcentajeECartelera)))
+    g.add((peli,Mi_ontologia["PorcentajeECartelera"], Literal(porcentajeECartelera)))
 
 
     g.serialize(destination='final.ttl', format='turtle')
