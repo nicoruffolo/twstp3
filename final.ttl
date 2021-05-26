@@ -1,75 +1,75 @@
-@prefix ns1: <http://schema.org/> .
-@prefix ns2: <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#> .
+@prefix ns1: <https://raw.githubusercontent.com//twstp3/master/owlgenerado.ttl#> .
+@prefix ns2: <http://schema.org/> .
 
-ns2:Wonder_Woman a ns1:Movie ;
-    ns1:calification "PG-13" ;
-    ns1:description """&#39;Wonder Woman 1984&#39; llegará a la pantalla grande el próximo 5 de junio de 2020, de nuevo con la actriz israelí Gal Gadot en el papel de la Mujer Maravilla y Patty Jenkins detrás de las cámaras. La secuela de &#39;Wonder Woman&#39; contará además con el regreso de Chris Pine (&#39;Star Trek. Más allá&#39;) como Steve Trevor. La película sigue a Diana en su vida durante los años 80 en Estados Unidos. En esta ocasión, Diana se enfrentará a nuevos enemigos. Su principal antagonista es la arqueóloga británica Barbara Minerva, que será interpretada por Kristen Wigg (&#39;Cazafantasmas&#39;). La científica tiene un alter ego, la villana Cheetah que tiene una fuerza y agilidad sobrehumanas. Otro enemigo a tener en cuenta será el empresario Maxwel Lord, interpretado por Pedro Pascal (&#39;The Mandalorian&#39;). Este personaje es un arrogante con la habilidad de manipular a otros a su antojo. En los cómics, Max Lord tiene poderes mentales. También aparecen en esta cinta las guerreras amazonas Antiope (Robin Wright) y la Reina Hippolyta (Connie Nielsen).\r
+ns1:Wonder_Woman a ns2:Movie ;
+    ns2:calification "PG-13" ;
+    ns2:description """&#39;Wonder Woman 1984&#39; llegará a la pantalla grande el próximo 5 de junio de 2020, de nuevo con la actriz israelí Gal Gadot en el papel de la Mujer Maravilla y Patty Jenkins detrás de las cámaras. La secuela de &#39;Wonder Woman&#39; contará además con el regreso de Chris Pine (&#39;Star Trek. Más allá&#39;) como Steve Trevor. La película sigue a Diana en su vida durante los años 80 en Estados Unidos. En esta ocasión, Diana se enfrentará a nuevos enemigos. Su principal antagonista es la arqueóloga británica Barbara Minerva, que será interpretada por Kristen Wigg (&#39;Cazafantasmas&#39;). La científica tiene un alter ego, la villana Cheetah que tiene una fuerza y agilidad sobrehumanas. Otro enemigo a tener en cuenta será el empresario Maxwel Lord, interpretado por Pedro Pascal (&#39;The Mandalorian&#39;). Este personaje es un arrogante con la habilidad de manipular a otros a su antojo. En los cómics, Max Lord tiene poderes mentales. También aparecen en esta cinta las guerreras amazonas Antiope (Robin Wright) y la Reina Hippolyta (Connie Nielsen).\r
 \r
 La trama de esta película es una gran misterio. El guión está basado en una historia escrita por Patty Jenkins, Geoff Johns (&#39;The Flash&#39;, &#39;Aquaman&#39;) y Dave Callaham (&#39;Zombieland: Mata y remata&#39;). Se espera que tenga protagonismo la tecnología y la vigilancia, teniendo en cuenta el título que hace referencia a la distopía de &#39;1984&#39; de George Orwell.""" ;
-    ns1:genre "Action",
+    ns2:genre "Action",
         "Adventure",
         "Fantasy" .
 
-ns2:actor1 a ns1:Person ;
-    ns1:name "Thomas Clay Strickland" .
+ns1:actor1 a ns2:Person ;
+    ns2:name "Thomas Clay Strickland" .
 
-ns2:actor2 a ns1:Person ;
-    ns1:name "Thomas Clay Strickland" .
+ns1:actor2 a ns2:Person ;
+    ns2:name "Thomas Clay Strickland" .
 
-ns2:actor3 a ns1:Person ;
-    ns1:name "Thomas Clay Strickland" .
+ns1:actor3 a ns2:Person ;
+    ns2:name "Thomas Clay Strickland" .
 
-ns2:actor4 a ns1:Person ;
-    ns1:name "Thomas Clay Strickland" .
+ns1:actor4 a ns2:Person ;
+    ns2:name "Thomas Clay Strickland" .
 
-ns2:actor5 a ns1:Person ;
-    ns1:name "Thomas Clay Strickland" .
+ns1:actor5 a ns2:Person ;
+    ns2:name "Thomas Clay Strickland" .
 
-ns2:actor6 a ns1:Person ;
-    ns1:name "Thomas Clay Strickland" .
+ns1:actor6 a ns2:Person ;
+    ns2:name "Thomas Clay Strickland" .
 
-ns2:autor1 a ns1:Person ;
-    ns1:name "PattyJenkins" .
+ns1:autor1 a ns2:Person ;
+    ns2:name "PattyJenkins" .
 
-ns2:autor2 a ns1:Person ;
-    ns1:name "GeoffJohns" .
+ns1:autor2 a ns2:Person ;
+    ns2:name "GeoffJohns" .
 
-ns2:autor3 a ns1:Person ;
-    ns1:name "DaveCallaham" .
+ns1:autor3 a ns2:Person ;
+    ns2:name "DaveCallaham" .
 
-ns2:director a ns1:Person ;
-    ns1:name "Patty Jenkins" .
+ns1:director a ns2:Person ;
+    ns2:name "Patty Jenkins" .
 
-ns2:duration a ns1:Duration ;
-    ns1:duration "PT2H31M" .
+ns1:duration a ns2:Duration ;
+    ns2:duration "PT2H31M" .
 
-ns2:porcentajeECartelera a ns2:PorcentajeECartelera ;
-    ns2:PorcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
+ns1:porcentajeECartelera a ns1:PorcentajeECartelera ;
+    ns1:PorcentajeECartelera "7,6% (por sobre un total de 20 criticas)" .
 
-ns2:porcentajeIMDB a ns2:PorcentajeIMDB ;
-    ns2:PorcentajeImdb "5.4% (por sobre un total de 204533 criticas)" .
+ns1:porcentajeIMDB a ns1:PorcentajeIMDB ;
+    ns1:PorcentajeImdb "5.4% (por sobre un total de 204533 criticas)" .
 
-ns2:porcentajeMetacritic a ns2:PorcentajeMetacritic ;
-    ns2:PorcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
+ns1:porcentajeMetacritic a ns1:PorcentajeMetacritic ;
+    ns1:PorcentajeMetacritic "60% (por sobre un total de 57 criticas)" .
 
-ns2:porcentajeTomatoes a ns2:PorcentajeTomatoes ;
-    ns2:PorcentajeTomatote "59% (por sobre un total de 426 criticas" .
+ns1:porcentajeTomatoes a ns1:PorcentajeTomatoes ;
+    ns1:PorcentajeTomatote "59% (por sobre un total de 426 criticas" .
 
-ns2:producer a ns1:Person ;
-    ns1:name "Warner Bros. Pictures" .
+ns1:producer a ns2:Person ;
+    ns2:name "Warner Bros. Pictures" .
 
-ns2:trailer a ns1:VideoObject ;
-    ns1:trailer "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing." .
+ns1:trailer a ns2:VideoObject ;
+    ns2:trailer "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing." .
 
-ns2:web1 a ns2:Web ;
-    ns2:web "https://www.rottentomatoes.com/m/wonder_woman_1984" .
+ns1:web1 a ns1:Web ;
+    ns1:web "https://www.rottentomatoes.com/m/wonder_woman_1984" .
 
-ns2:web2 a ns2:Web ;
-    ns2:web "https://www.imdb.com/title/tt7126948/" .
+ns1:web2 a ns1:Web ;
+    ns1:web "https://www.imdb.com/title/tt7126948/" .
 
-ns2:web3 a ns2:Web ;
-    ns2:web "https://www.metacritic.com/movie/wonder-woman-1984" .
+ns1:web3 a ns1:Web ;
+    ns1:web "https://www.metacritic.com/movie/wonder-woman-1984" .
 
-ns2:web4 a ns2:Web ;
-    ns2:web "https://www.ecartelera.com/peliculas/wonder-woman-1984/" .
+ns1:web4 a ns1:Web ;
+    ns1:web "https://www.ecartelera.com/peliculas/wonder-woman-1984/" .
 
